@@ -1,11 +1,4 @@
-import { useState } from "react";
-
-const Home = () => {
-  const [contador, setContador] = useState(0);
-
-  const sumar = () => {
-    setContador(contador + 1);
-  };
+const Home = ({ sumar, setContador, contador }) => {
   return (
     <div style={{ padding: "0 20px" }}>
       <h1>Estoy en el Home</h1>
