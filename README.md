@@ -1,8 +1,8 @@
 Proyecto Final // Curso ReactJS - CoderHouse
 Autor: Mauricio Abregú
 
-Website restyling: https://www.mitiendamueble.com.ar/
+Website restyling: https://www.landmark.com.ar/
 
 ### Recorrido Rápido por el Sitio
 
-![Landmark](https://drive.google.com/file/d/1leTdD2WBoysMXMBciN8hEXsnI9aioNiR/preview)
+![Landmark](https://res.cloudinary.com/dccpja8fr/image/upload/v1689473708/reactJS-Coderhouse/Gifs/2da-pre-entrega.gif)
