@@ -86,4 +86,8 @@
   .navbar input {
     margin-top: 0.5em;
   }
+
+  .navSpan {
+    display: none;
+  }
 }

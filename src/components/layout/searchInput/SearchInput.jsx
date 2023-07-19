@@ -1,18 +1,17 @@
 // REACT
 import React, { useContext } from "react";
 
-// // CONTEXT
-// import { SiteContext } from "../../context/SiteContext";
+// CONTEXT
+import { SiteContext } from "../../../context/SiteContext";
 
-const SearchImput = () => {
-  //   const { handleSearch } = useContext(SiteContext);
+const SearchInput = () => {
+  const { handleSearch } = useContext(SiteContext);
 
   return (
     <div>
-      {/* <input type="text" placeholder="buscar" onChange={handleSearch} /> */}
-      <input type="text" placeholder="buscar" />
+      <input type="text" placeholder="buscar" onChange={handleSearch} />
     </div>
   );
 };
 
-export default SearchImput;
+export default SearchInput;

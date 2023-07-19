@@ -4,8 +4,8 @@ import React, { useContext } from "react";
 // REACT ROUTER DOM
 import { Link } from "react-router-dom";
 
-// // CONTEXT
-// import { SiteContext } from "../../context/SiteContext";
+// CONTEXT
+import { SiteContext } from "../../../context/SiteContext";
 
 // COMPONENTS
 import CartWidget from "../cartWidget/CartWidget";
@@ -16,7 +16,8 @@ import { Link as ScrollLink } from "react-scroll";
 import "./Navbar.css";
 
 const Navbar = () => {
-  // const { isInStore, isInHome } = useContext(SiteContext);
+  const { isInStore, isInHome } = useContext(SiteContext);
+
   return (
     <nav className="navbar navbar-expand-lg" id="navbar">
       <Link to="/" className="navbar-brand">
@@ -42,8 +43,7 @@ const Navbar = () => {
           <ScrollLink
             to="nosotros"
             className={
-              // isInHome ? "nav-item nav-link" : "nav-item nav-link disabled"
-              "nav-item nav-link"
+              isInHome ? "nav-item nav-link" : "nav-item nav-link disabled"
             }
             smooth={true}
           >
@@ -52,8 +52,7 @@ const Navbar = () => {
           <ScrollLink
             to="productos"
             className={
-              // isInHome ? "nav-item nav-link" : "nav-item nav-link disabled"
-              "nav-item nav-link"
+              isInHome ? "nav-item nav-link" : "nav-item nav-link disabled"
             }
             smooth={true}
           >
@@ -97,7 +96,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="widgets d-flex align-items-center">
-          {/* {isInStore ? <SearchInput /> : ""} */ <SearchInput />}
+          {isInStore ? <SearchInput /> : ""}
           <div>
             <CartWidget />
           </div>

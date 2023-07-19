@@ -7,29 +7,35 @@ import ItemList from "./ItemList";
 // // FIREBASE
 // import { db } from "../../../Firebase";
 
+// Products Mock for Dev
+import productsMock from "../../productsMock";
+
 // CSS
 import "./ItemList.css";
 
 const ItemListContainer = () => {
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  // const getProducts = () => {
-  //   const firebaseProducts = [];
-  //   db.collection("buncitsProducts").onSnapshot((querySnapshot) => {
-  //     querySnapshot.forEach((item) => {
-  //       firebaseProducts.push({ ...item.data(), id: item.id });
-  //     });
-  //     setProducts(firebaseProducts);
-  //   });
-  // };
+  const getProducts = () => {
+    //   const firebaseProducts = [];
+    //   db.collection("buncitsProducts").onSnapshot((querySnapshot) => {
+    //     querySnapshot.forEach((item) => {
+    //       firebaseProducts.push({ ...item.data(), id: item.id });
+    //     });
+    //     setProducts(firebaseProducts);
+    //   });
 
-  // useEffect(() => {
-  //   getProducts();
-  // }, []);
+    // DEV !!!!!!!!!!
+    setProducts(productsMock);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <div className="item-list-container row px-0 mx-0 my-5">
-      {true ? (
+      {products.length === 0 ? (
         <div className="loadingMsg">
           <p>
             cargando productos...
@@ -37,7 +43,7 @@ const ItemListContainer = () => {
           </p>
         </div>
       ) : (
-        <ItemList />
+        <ItemList allProducts={products} />
       )}
     </div>
   );

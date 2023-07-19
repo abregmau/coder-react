@@ -15,22 +15,26 @@ import Footer from "./components/layout/footer/Footer";
 // import Cart from "./components/cart/Cart";
 
 // CONTEXT
+import { SiteProvider } from "./context/SiteContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<HomeContainer />} />
-          <Route exact path="/store" element={<Store />} />
-
-          <Route exact path="/:category/:id" element={<ProductDetail />} />
-          <Route exact path="/:category" element={<Category />} />
-        </Routes>
-        <Footer copyright="Todos los derechos reservados." />
-      </div>
-    </BrowserRouter>
+    <SiteProvider>
+      <BrowserRouter>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route exact path="/" element={<HomeContainer />} />
+            <Route exact path="/store" element={<Store />} />
+            {/* Falta el Cart */}
+            <Route exact path="/:category/:id" element={<ProductDetail />} />
+            <Route exact path="/:category" element={<Category />} />
+            {/* Falta el 404 not found */}
+          </Routes>
+          <Footer copyright="Todos los derechos reservados." />
+        </div>
+      </BrowserRouter>
+    </SiteProvider>
   );
 }
 

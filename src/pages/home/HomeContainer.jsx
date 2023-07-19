@@ -1,8 +1,7 @@
 // REACT
 import React, { useContext, useEffect } from "react";
-
-// // CONTECT
-// import { SiteContext } from "../../context/SiteContext";
+// CONTECT
+import { SiteContext } from "../../context/SiteContext";
 
 // COMPONENTS
 import Home from "./Home";
@@ -11,7 +10,14 @@ import Home from "./Home";
 import "./Home.css";
 
 const HomeContainer = () => {
-  // aca falta código
+  const { setIsInStore, setIsInHome, setSearchInput } = useContext(SiteContext);
+
+  useEffect(() => {
+    setIsInStore(false);
+    setIsInHome(true);
+    setSearchInput("");
+  }, [setIsInStore, setIsInHome, setSearchInput]);
+
   return <Home />;
 };
 

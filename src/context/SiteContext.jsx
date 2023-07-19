@@ -8,9 +8,9 @@ export const SiteProvider = ({ children }) => {
   const [isInStore, setIsInStore] = useState(false);
   const [isInHome, setIsInHome] = useState(false);
 
-  const [searchImput, setSearchImput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const handleSearch = (e) => {
-    setSearchImput(e.target.value);
+    setSearchInput(e.target.value);
   };
 
   // CART RELATED CONTEXT //
@@ -83,8 +83,8 @@ export const SiteProvider = ({ children }) => {
         setIsInStore,
         isInHome,
         setIsInHome,
-        searchImput,
-        setSearchImput,
+        searchInput,
+        setSearchInput,
         handleSearch,
         cart,
         cartAmount,
