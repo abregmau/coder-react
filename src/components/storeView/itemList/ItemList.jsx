@@ -19,19 +19,24 @@ const ItemList = ({ allProducts }) => {
     ? products.filter((item) => item.category === category)
     : products;
 
-  // Modificar la función de abajo, reemplazar las cadenas por True y False
   const filteredProds = classifiedProds.filter((item) => {
     if (searchInput === "") {
-      return item;
+      return true;
     } else if (
       item.title
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
-        .includes(searchInput.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+        .toLowerCase()
+        .includes(
+          searchInput
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+        )
     ) {
-      return item;
+      return true;
     } else {
-      return "";
+      return false;
     }
   });
 
