@@ -78,10 +78,10 @@ const Navbar = () => {
               aria-labelledby="navbarDropdownMenuLink"
             >
               <Link to="/sofas" className="dropdown-item">
-                sofás
+                sofás / sillones
               </Link>
               <Link to="/sillas" className="dropdown-item">
-                sillas / sillones
+                sillas
               </Link>
               <Link to="/estanterias" className="dropdown-item">
                 estanterías
