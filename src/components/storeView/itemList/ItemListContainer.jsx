@@ -28,7 +28,7 @@ const ItemListContainer = () => {
     // DEV !!!!!!!!!!
     // setProducts(productsMock);
 
-    // Pruebas Back-End
+    // Pruebas Back-End con Fetch
     let data = fetch("http://localhost:5000/products");
     data
       .then((res) => res.json())
