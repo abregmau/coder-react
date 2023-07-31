@@ -7,6 +7,9 @@ import ItemList from "./ItemList";
 // // FIREBASE
 // import { db } from "../../../Firebase";
 
+// AXIOS
+import axios from "axios";
+
 // Products Mock for Dev
 // import productsMock from "../../productsMock";
 
@@ -29,10 +32,16 @@ const ItemListContainer = () => {
     // setProducts(productsMock);
 
     // Pruebas Back-End con Fetch
-    let data = fetch("http://localhost:5000/products");
+    // let data = fetch.get("http://localhost:5000/products");
+    // data
+    //   .then((res) => res.json())
+    //   .then((res) => setProducts(res))
+    //   .catch((error) => console.log(error));
+
+    // Pruebas Back-End con Fetch
+    let data = axios.get("http://localhost:5000/products");
     data
-      .then((res) => res.json())
-      .then((res) => setProducts(res))
+      .then((res) => setProducts(res.data))
       .catch((error) => console.log(error));
   };
 
