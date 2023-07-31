@@ -53,8 +53,8 @@ const ItemList = ({ allProducts }) => {
       </div>
     )
   ) : (
-    filteredProds.map((items) => {
-      return <Item data={items} key={items.id} />;
+    filteredProds.map((item) => {
+      return <Item data={item} key={item.id} />;
     })
   );
 };
