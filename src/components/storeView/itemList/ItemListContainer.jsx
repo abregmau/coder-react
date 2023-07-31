@@ -38,7 +38,7 @@ const ItemListContainer = () => {
     //   .then((res) => setProducts(res))
     //   .catch((error) => console.log(error));
 
-    // Pruebas Back-End con Fetch
+    // Pruebas Back-End con Axios
     let data = axios.get("http://localhost:5000/products");
     data
       .then((res) => setProducts(res.data))
