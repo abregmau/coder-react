@@ -8,7 +8,7 @@ import ItemList from "./ItemList";
 // import { db } from "../../../Firebase";
 
 // Products Mock for Dev
-import productsMock from "../../productsMock";
+// import productsMock from "../../productsMock";
 
 // CSS
 import "./ItemList.css";
@@ -26,7 +26,14 @@ const ItemListContainer = () => {
     //   });
 
     // DEV !!!!!!!!!!
-    setProducts(productsMock);
+    // setProducts(productsMock);
+
+    // Pruebas Back-End
+    let data = fetch("http://localhost:5000/products");
+    data
+      .then((res) => res.json())
+      .then((res) => setProducts(res))
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
