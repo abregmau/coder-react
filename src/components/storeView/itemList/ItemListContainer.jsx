@@ -4,11 +4,9 @@ import React, { useState, useEffect } from "react";
 // COMPONENTS
 import ItemList from "./ItemList";
 
-// // FIREBASE
-// import { db } from "../../../Firebase";
-
-// Products Mock for Dev
-import productsMock from "../../productsMock";
+// FIREBASE
+import { db } from "../../firebaseConfig";
+import { collection, getDocs, onSnapshot } from "firebase/firestore";
 
 // CSS
 import "./ItemList.css";
@@ -17,20 +15,37 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   const getProducts = () => {
-    //   const firebaseProducts = [];
-    //   db.collection("buncitsProducts").onSnapshot((querySnapshot) => {
-    //     querySnapshot.forEach((item) => {
-    //       firebaseProducts.push({ ...item.data(), id: item.id });
-    //     });
-    //     setProducts(firebaseProducts);
+    // Para obtener un instantanea desde la base de datos
+    // let ref = collection(db, "products");
+    // getDocs(ref).then((res) => {
+    //   let arrayProducts = res.docs.map((product) => {
+    //     return { ...product.data(), id: product.id };
     //   });
+    //   setProducts(arrayProducts);
+    // });
 
-    // DEV !!!!!!!!!!
-    setProducts(productsMock);
+    // Para obtener en tiempo real los cambios de la base de datos
+    let ref = collection(db, "products");
+    const unsubscribe = onSnapshot(ref, (querySnapshot) => {
+      let arrayProducts = querySnapshot.docs.map((product) => {
+        return { ...product.data(), id: product.id };
+      });
+      setProducts(arrayProducts);
+    });
+    return unsubscribe;
   };
 
+  // Para obtener un instantanea desde la base de datos
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
+
+  // Para obtener en tiempo real los cambios de la base de datos
   useEffect(() => {
-    getProducts();
+    const unsubscribe = getProducts();
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   return (

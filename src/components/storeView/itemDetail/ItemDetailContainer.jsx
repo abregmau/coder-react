@@ -7,11 +7,9 @@ import ItemDetail from "./ItemDetail";
 // REACT-ROUTER-DOM
 import { useParams } from "react-router-dom";
 
-// // FIREBASE
-// import { db } from "../../Firebase";
-
-// Products Mock for Dev
-import productsMock from "../../productsMock";
+// FIREBASE
+import { db } from "../../firebaseConfig";
+import { collection, getDocs, onSnapshot } from "firebase/firestore";
 
 // CSS
 import "./ItemDetail.css";
@@ -21,23 +19,44 @@ const itemDetailContainer = () => {
 
   const { id, category } = useParams();
 
-  useEffect(() => {
-    const firebaseProducts = [];
-    // db.collection("buncitsProducts").onSnapshot((querySnapshot) => {
-    //   querySnapshot.forEach((item) => {
-    //     firebaseProducts.push({ ...item.data(), id: item.id });
-    //     const myProduct = firebaseProducts.find(
-    //       (item) => item.id === id && item.category === category
-    //     );
-    //     setProducts(myProduct);
+  const getProducts = () => {
+    // Para obtener un instantanea desde la base de datos
+    // let ref = collection(db, "products");
+    // getDocs(ref).then((res) => {
+    //   let arrayProducts = res.docs.map((product) => {
+    //     return { ...product.data(), id: product.id };
     //   });
+    //   const myProduct = arrayProducts.find(
+    //     (item) => item.id === id && item.category === category
+    //   );
+    //   setProducts(myProduct);
     // });
 
-    // DEV !!!!!!!!!!
-    const myProduct = productsMock.find(
-      (item) => item.id === id && item.category === category
-    );
-    setProducts(myProduct);
+    // Para obtener en tiempo real los cambios de la base de datos
+    let ref = collection(db, "products");
+    const unsubscribe = onSnapshot(ref, (querySnapshot) => {
+      let arrayProducts = querySnapshot.docs.map((product) => {
+        return { ...product.data(), id: product.id };
+      });
+      const myProduct = arrayProducts.find(
+        (item) => item.id === id && item.category === category
+      );
+      setProducts(myProduct);
+    });
+    return unsubscribe;
+  };
+
+  // Para obtener un instantanea desde la base de datos
+  // useEffect(() => {
+  //   getProducts();
+  // }, [category, id]);
+
+  // Para obtener en tiempo real los cambios de la base de datos
+  useEffect(() => {
+    const unsubscribe = getProducts();
+    return () => {
+      unsubscribe();
+    };
   }, [category, id]);
 
   return (
