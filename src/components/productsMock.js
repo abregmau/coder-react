@@ -1,6 +1,5 @@
 export const productsMock = [
   {
-    id: "0001",
     title: "Sillón Drake Black",
     price: 850000,
     stock: 8,
@@ -15,7 +14,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689732661/reactJS-Coderhouse/products/id-0001/Landmark-Muebles-DrakeBlackSlate-Sillon-3_y0hdsg.jpg",
   },
   {
-    id: "0002",
     title: "Sofa Chesterfield Cuero Trento Negro 240",
     price: 900000,
     stock: 5,
@@ -30,7 +28,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689736494/reactJS-Coderhouse/products/id-0002/Sofa-de-cuero-negro-CHESTERFIELD-CUERO-TRENTO-NEGRO-210-Landmark-03_jgzuot.jpg",
   },
   {
-    id: "0003",
     title: "Lampara De Mesa Bauer Black",
     price: 70000,
     stock: 8,
@@ -45,7 +42,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689898800/reactJS-Coderhouse/products/id-0003/Lampara-de-escritorio-negra-BAUER-BLACK-Landmark-02_e3ijfa_uw45ab.jpg",
   },
   {
-    id: "0004",
     title: "Lampara De Pie Branch Black",
     price: 126800,
     stock: 3,
@@ -60,7 +56,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689897088/reactJS-Coderhouse/products/id-0004/Lampara-de-pie-metal-y-madera-BRANCH-BLACK-Landmark-2_gz13rc.jpg",
   },
   {
-    id: "0005",
     title: "Lampara Colgante Nazas Black",
     price: 66900,
     stock: 5,
@@ -75,7 +70,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689897300/reactJS-Coderhouse/products/id-0005/Lampara-colgante-de-hierro-negra-COLGANTE-NAZAS-BLACK-Landmark-02_mr7gci.jpg",
   },
   {
-    id: "0006",
     title: "Estantería Industrial Olimpo",
     price: 110300,
     stock: 5,
@@ -90,7 +84,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689898092/reactJS-Coderhouse/products/id-0006/est-021-b7f54d0e5a2c38e57116176650415044-640-0_z9ia9z.jpg",
   },
   {
-    id: "0007",
     title: "Estantería Industrial Ergon",
     price: 76500,
     stock: 5,
@@ -105,7 +98,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689898461/reactJS-Coderhouse/products/id-0007/est-01-021-77b874ec471dc7f12316182514704385-640-0_syoonl.jpg",
   },
   {
-    id: "0008",
     title: "Estantería Industrial Iris",
     price: 71100,
     stock: 3,
@@ -120,7 +112,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689898944/reactJS-Coderhouse/products/id-0008/est-002-031-616ec1b3cee0e43d9316182517560312-640-0_luvwev.jpg",
   },
   {
-    id: "0009",
     title: "Vajillero Amalfi Incienso",
     price: 729000,
     stock: 4,
@@ -135,7 +126,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689899309/reactJS-Coderhouse/products/id-0009/Vajillero-de-mandera-bajo-AMALFI-INCIENSO-Landmark-03_azi91j.jpg",
   },
   {
-    id: "0010",
     title: "Vajillero Emily Blind Black",
     price: 897000,
     stock: 3,
@@ -150,7 +140,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689899409/reactJS-Coderhouse/products/id-0010/Vajillero-bajo-de-madera-y-hierro-EMILY-BLIND-BLACK-Landmark-03_adm6pv.jpg",
   },
   {
-    id: "0011",
     title: "Silla Sud Petiribi Cuero Negro",
     price: 199000,
     stock: 3,
@@ -165,7 +154,6 @@ export const productsMock = [
       "https://res.cloudinary.com/dccpja8fr/image/upload/v1689899586/reactJS-Coderhouse/products/id-0011/Silla-de-madera-con-asiento-tapizado-SUD-PETIRIBI-CUERO-NEGRO-Landmark-01_a8h2je.jpg",
   },
   {
-    id: "0012",
     title: "Silla Keila Grey Linen",
     price: 112200,
     stock: 3,

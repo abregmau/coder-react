@@ -2,13 +2,13 @@
 import React, { useContext, useState, useEffect } from "react";
 
 // REACT ROUTER DOM
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-// // CONTEXT
-// import { SiteContext } from "../../context/SiteContext";
+// CONTEXT
+import { SiteContext } from "../../context/SiteContext";
 
-// // COMPONENTS
-// import Checkout from "../Checkout/Checkout";
+// COMPONENTS
+import Checkout from "../checkout/Checkout";
 
 // CSS
 import "./Cart.css";
@@ -29,7 +29,7 @@ const Cart = () => {
     setIsInHome(false);
   }, [setIsInStore, setIsInHome]);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [checkout, setCheckout] = useState(false);
 
@@ -38,7 +38,7 @@ const Cart = () => {
   };
 
   const goBack = () => {
-    history.push("/");
+    navigate(-1);
   };
 
   return (
@@ -47,7 +47,7 @@ const Cart = () => {
       {!cart.length ? (
         <div className="emptyCart text-center d-flex flex-column justify-content-center align-items-center">
           <p>Tu carrito está vacío.</p>
-          <span className="loadingMsg_Logo">buncits.</span>
+          <span className="loadingMsg_Logo">landmark.</span>
           <button className="mt-5" onClick={goBack}>
             volver
           </button>
